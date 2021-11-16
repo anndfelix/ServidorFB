@@ -49,10 +49,12 @@ public class Servidor {
             System.out.println(object.getString("usuarioCreador"));
             System.out.println(object.getString("fechaHoraCreacion"));
 
-//            publicar.publicar(object.getString("contenido"), publicar.listaEtiquetas(object.getString("etiquetas")), object.getString("usuarioCreador"), object.getString("fechaHoraCreacion"));
+            publicar.publicar(object.getString("contenido"), publicar.listaEtiquetas(object.getString("etiquetas")), publicar.usuarioCreador(object.getString("usuarioCreador")), new GregorianCalendar(0, 0, 0));
+
             br.close();
             socket.close();
             serverSocket.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

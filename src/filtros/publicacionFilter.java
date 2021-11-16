@@ -28,8 +28,8 @@ public class publicacionFilter {
 
         pdao.insertar(publicacion);
     }
-    
-     public List<String> listaEtiquetas(String contenido) {
+
+    public List<String> listaEtiquetas(String contenido) {
 
         Pattern p = Pattern.compile("(#[^#\\s]*)");
         Matcher m = p.matcher(contenido);
@@ -40,6 +40,18 @@ public class publicacionFilter {
         }
 
         return etiquetas;
+    }
+
+    public Usuario usuarioCreador(String usuario) throws DAOException {
+
+        Pattern p = Pattern.compile("(?<=id\":)[\\d]{2,}");
+        Matcher m = p.matcher(usuario);
+        Usuario u = new Usuario();
+
+        if (m.find()) {
+            u = udao.consultarID(Long.valueOf(m.group()));
+        }
+        return u;
 
     }
 
