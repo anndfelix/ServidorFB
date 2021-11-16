@@ -6,6 +6,10 @@
     <class>objetosNegocio.Publicacion</class>
     <class>objetosNegocio.Comentario</class>
     <class>objetosNegocio.RelEtiquetados</class>
+    <class>objetosNegocio.RelComentarioEtiquetados</class>
+    <class>objetosNegocio.NewEntity</class>
+    <class>objetosNegocio.Mensaje</class>
+    <class>objetosNegocio.Chat</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/faceboot?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

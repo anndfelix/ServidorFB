@@ -1,13 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package objetosNegocio;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
-@Entity
-@Table(name = "rel_publicacionEtiquetas")
-public class RelEtiquetados implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+/**
+ *
+ * @author Andrea
+ */
+@Entity
+@Table(name = "rel_comentarioEtiquetas")
+public class RelComentarioEtiquetados implements Serializable {
+
+   private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "id_relacion")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +28,8 @@ public class RelEtiquetados implements Serializable {
     private Usuario usuario;
 
     @ManyToOne()
-    @JoinColumn(name = "id_publicacion", nullable = false)
-    private Publicacion publicacion;
+    @JoinColumn(name = "id_comentario", nullable = false)
+    private Comentario comentario;
 
     public Long getId() {
         return id;
@@ -29,27 +39,9 @@ public class RelEtiquetados implements Serializable {
         this.id = id;
     }
 
-    public RelEtiquetados() {
+    public RelComentarioEtiquetados() {
     }
 
-    public Publicacion getPublicacion() {
-        return publicacion;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setPublicacion(Publicacion publicacion) {
-        this.publicacion = publicacion;
-    }
-
-    
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -60,10 +52,10 @@ public class RelEtiquetados implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof RelEtiquetados)) {
+        if (!(object instanceof RelComentarioEtiquetados)) {
             return false;
         }
-        RelEtiquetados other = (RelEtiquetados) object;
+        RelComentarioEtiquetados other = (RelComentarioEtiquetados) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -74,5 +66,6 @@ public class RelEtiquetados implements Serializable {
     public String toString() {
         return "objetosNegocio.RelEtiquetados[ id=" + id + " ]";
     }
-
+    
 }
+

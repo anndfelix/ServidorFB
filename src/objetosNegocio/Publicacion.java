@@ -54,6 +54,10 @@ public class Publicacion implements Serializable {
         this.fechaHoraCreacion = fechaHoraCreacion;
     }
 
+    public List<RelEtiquetados> getRelaciones() {
+        return relaciones;
+    }
+
     public Usuario getUsuarioCreador() {
         return usuarioCreador;
     }

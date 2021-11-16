@@ -39,7 +39,7 @@ public class Usuario implements Serializable {
 
     @OneToMany(mappedBy = "usuarioCreador", cascade = CascadeType.ALL)
     private List<Publicacion> publicaciones;
-   
+
     public Usuario() {
     }
 

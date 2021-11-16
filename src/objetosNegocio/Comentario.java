@@ -33,6 +33,9 @@ public class Comentario implements Serializable {
     @JoinColumn(name = "id_publicacion", nullable = false)
     private Publicacion publicacion;
 
+    @OneToMany(mappedBy = "comentario", cascade = CascadeType.ALL)
+    private List<RelComentarioEtiquetados> relaciones;
+
     public Comentario() {
     }
 
@@ -80,8 +83,6 @@ public class Comentario implements Serializable {
     public void setPublicacion(Publicacion publicacion) {
         this.publicacion = publicacion;
     }
-
-    
 
     @Override
     public boolean equals(Object object) {
