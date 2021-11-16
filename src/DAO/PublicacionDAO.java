@@ -29,11 +29,11 @@ public class PublicacionDAO extends BaseDAO<Publicacion> {
     }
 
     @Override
-    public void insertar(Publicacion usuario) throws DAOException {
+    public void insertar(Publicacion publicacion) throws DAOException {
         try {
             EntityManager em = this.generarConexion();
             em.getTransaction().begin();
-            em.persist(usuario);
+            em.persist(publicacion);
             em.getTransaction().commit();
         } catch (DAOException ex) {
             System.out.println(ex.getMessage());
