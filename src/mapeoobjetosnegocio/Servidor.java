@@ -15,8 +15,6 @@ import java.net.Socket;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import net.sf.json.JSONObject;
-import objetosNegocio.Sexo;
-import objetosNegocio.Usuario;
 
 public class Servidor {
 
