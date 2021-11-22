@@ -2,6 +2,7 @@ package filtros;
 
 import DAO.UsuarioDAO;
 import Exception.DAOException;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import net.sf.json.JSONObject;
@@ -23,7 +24,7 @@ public class IniciarSesionFilter {
         usuario.setNombre(object.getString("name"));
         usuario.setContraseña(object.getString("password"));
         usuario.setEmail(object.getString("email"));
-        usuario.setFecha(new GregorianCalendar(0, 0, 0));
+        usuario.setFecha(new Date(121, 10, 25));
         usuario.setNumeroCelular(object.getString("numero"));
         usuario.setSexo(Sexo.valueOf(object.getString("sexo")));
         usuario.setEdad(Integer.parseInt(object.getString("edad")));

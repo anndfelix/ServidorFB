@@ -2,6 +2,7 @@ package objetosNegocio;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 
@@ -35,7 +36,7 @@ public class Usuario implements Serializable {
 
     @Column(name = "fechaNacimiento", nullable = false)
     @Temporal(value = TemporalType.DATE)
-    private Calendar fecha;
+    private Date fecha;
 
     @OneToMany(mappedBy = "usuarioCreador", cascade = CascadeType.ALL)
     private List<Publicacion> publicaciones;
@@ -43,7 +44,7 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String email, Sexo sexo, String numeroCelular, String contraseña, int edad, Calendar fecha) {
+    public Usuario(String nombre, String email, Sexo sexo, String numeroCelular, String contraseña, int edad, Date fecha) {
         this.nombre = nombre;
         this.email = email;
         this.sexo = sexo;
@@ -109,11 +110,11 @@ public class Usuario implements Serializable {
         this.edad = edad;
     }
 
-    public Calendar getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Calendar fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
